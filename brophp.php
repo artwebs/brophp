@@ -17,7 +17,7 @@
 	//PHP程序所有需要的路径，都使用相对路径
 	define("BROPHP_PATH", rtrim(BROPHP, '/').'/');     //BroPHP框架的路径
 	define("APP_PATH", rtrim(APP,'/').'/');            //用户项目的应用路径
-	define("PROJECT_PATH", dirname(BROPHP_PATH).'/');  //项目的根路径，也就是框架所在的目录
+	define("PROJECT_PATH", rtrim(PROJECT).'/');  //项目的根路径，也就是框架所在的目录
 	define("TMPPATH", str_replace(array(".", "/"), "_", ltrim($_SERVER["SCRIPT_NAME"], '/'))."/");
 
 	//包含系统配置文件
