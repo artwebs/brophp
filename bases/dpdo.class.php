@@ -97,8 +97,9 @@
 				$return=null;
 	 			$pdo=self::connect();
 		 		$stmt=$pdo->prepare($sql);  //准备好一个语句
-		        	$result=$stmt->execute($value);   //执行一个准备好的语句
-
+				L($sql);
+				L($value);
+		    $result=$stmt->execute($value);   //执行一个准备好的语句
 				//如果使用mem，并且不是查找语句
 				// if(isset($mem) && !$addcache){
 				// 	if($stmt->rowCount()>0){
@@ -117,7 +118,6 @@
 				 switch($method){
 					 case "select":  //查所有满足条件的
 						 $data=$stmt->fetchAll(PDO::FETCH_ASSOC);
-
 						 if($addcache){
 						 	$cobj->addCache($this->tabName, $memkey, $data);
 						 }
